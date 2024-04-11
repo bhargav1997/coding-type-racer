@@ -1,1 +1,2 @@
-# coding-type-racer
+# Coding Type Racer
+
