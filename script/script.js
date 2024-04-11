@@ -253,12 +253,12 @@ document.addEventListener('DOMContentLoaded', async function () {
          case 'medium':
             codeData = data['medium'];
             current_time.innerHTML = '80s';
-            TIME_LIMIT = 15;
+            TIME_LIMIT = 80;
             break;
          case 'hard':
             codeData = data['hard'];
             current_time.innerHTML = '120s';
-            TIME_LIMIT = 15;
+            TIME_LIMIT = 120;
             break;
          default:
             codeData = data['easy']; // Default to easy difficulty
