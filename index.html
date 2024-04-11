@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Game</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="game-name">Coding Type Racer</h1>
+        <div class="options">
+            <label for="difficulty">Select Difficulty:</label>
+            <select id="difficulty">
+                <option value="easy">Easy</option>
+                <option value="medium">Medium</option>
+                <option value="hard">Hard</option>
+            </select>
+            <button id="startButton">Start</button>
+        </div>
+        <div class="box">
+            <h2 id="language">Javascript</h2>
+            <p id="paragraph"></p>
+            <textarea id="userInput" placeholder="Type here..."></textarea>
+            <p id="result"></p>
+
+            <div class="options-list">
+                <div class="errors box">
+                    <div class="header_text">Errors</div>
+                    <div class="curr_errors">0</div>
+                </div>
+                <div class="timer box">
+                    <div class="header_text">Time</div>
+                    <div class="curr_time" id="current_time">15s</div>
+                </div>
+            </div>
+            <button id="refreshButton">Reload</button>
+        </div>
+    </div>
+    <div class="board">
+        <h2>Typing Simulator Game Board</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Attempt</th>
+                    <th>Errors</th>
+                    <th>Time (in sec)</th>
+                    <th>Typing Speed</th>
+                    <th>Difficulty</th>
+                </tr>
+            </thead>
+            <tbody id="table-body">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="./script/script.js"></script>
+</body>
+
+</html>

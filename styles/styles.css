@@ -1,0 +1,274 @@
+body {
+   font-family: Arial, sans-serif;
+   margin: 0;
+   padding: 0;
+   background-color: #f0f0f0;
+}
+
+.container {
+   position: relative;
+   width: 80%;
+   margin: 0 auto;
+   text-align: center;
+   padding-top: 2em;
+}
+
+.game-name {
+   letter-spacing: 0.15em;
+   font-family: "Lora", serif;
+   font-optical-sizing: auto;
+   font-weight: 700;
+   font-style: normal;
+}
+
+
+.options {
+   margin-bottom: 20px;
+}
+
+label {
+   font-size: 18px;
+   margin-right: 10px;
+   font-family: "Lora", serif;
+   font-optical-sizing: auto;
+   font-weight: 500;
+   font-style: normal;
+}
+
+select {
+   padding: 8px;
+   font-size: 16px;
+   border-radius: 5px;
+   margin-right: 5px;
+}
+
+#startButton {
+   padding: 10px 20px;
+   font-size: 16px;
+   border: none;
+   border-radius: 5px;
+   background-color: #007bff;
+   color: #fff;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+#startButton:hover {
+   background-color: #0056b3;
+}
+
+
+#language {
+   font-family: "Lora", serif;
+   font-optical-sizing: auto;
+   font-weight: 700;
+   font-style: normal;
+}
+
+.typing-area {
+   border: 2px solid #ccc;
+   border-radius: 5px;
+   padding: 10px;
+   margin-bottom: 20px;
+}
+
+#paragraph {
+   line-height: 1.8em;
+   font-size: 20px;
+}
+
+#userInput {
+   margin-top: 20px;
+   padding: 10px;
+   font-size: 16px;
+   border-radius: 10px;
+   min-height: 2em;
+   min-width: 30%;
+   max-width: 80%;
+}
+
+#result {
+   margin-top: 20px;
+   font-size: 18px;
+
+   font-family: "Lora", serif;
+   font-optical-sizing: auto;
+   font-weight: 600;
+   font-style: normal;
+}
+
+.options-list {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.timer,
+.errors,
+.cpm,
+.wpm {
+   height: 60px;
+   width: 70px;
+   margin: 8px;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: wrap;
+   align-content: space-around;
+   justify-content: space-around;
+   align-items: stretch;
+
+}
+
+
+.cpm,
+.wpm {
+   display: none;
+}
+
+.header_text {
+   font-size: 20px;
+   font-family: "Lora", serif;
+   font-optical-sizing: auto;
+   font-weight: 700;
+   font-style: normal;
+}
+
+.box {
+   border: 2px solid #ccc;
+   border-radius: 5px;
+   padding: 10px;
+   margin-bottom: 20px;
+   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
+}
+
+.board {
+    width: 60%;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.board h2 {
+   font-family: "Lora", serif;
+   font-optical-sizing: auto;
+   font-weight: 700;
+   font-style: normal;
+   letter-spacing: 0.15em;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-family: "Lora", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+#refreshButton {
+   padding: 10px 20px;
+   font-size: 16px;
+   border: none;
+   border-radius: 5px;
+   background-color: #007bff;
+   color: #fff;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+#refreshButton:hover {
+   background-color: #0056b3;
+}
+
+/* Update: Added responsive styles */
+@media screen and (max-width: 768px) {
+   .container {
+     width: 90%;
+     padding-top: 50px;
+   }
+ 
+   .board {
+     width: 90%;
+   }
+ }
+ 
+ @media screen and (max-width: 480px) {
+   .container {
+     width: 95%;
+     padding-top: 30px;
+   }
+ 
+   .board {
+     width: 95%;
+   }
+ 
+   .options-list {
+     flex-direction: column;
+   }
+ 
+   .timer,
+   .errors {
+     width: 100%;
+     margin-bottom: 10px;
+   }
+ 
+   .game-name {
+     font-size: 24px;
+   }
+ 
+   .options {
+     flex-direction: column;
+   }
+ 
+   select {
+     width: 100%;
+     margin-bottom: 10px;
+   }
+ 
+   #startButton,
+   #refreshButton {
+     width: 100%;
+     margin-top: 10px;
+   }
+   #userInput {
+      width: 90%; /* Adjust the width as needed */
+      max-width: 100%; /* Ensure it doesn't overflow the container */
+      margin: 0 auto; /* Center the textarea */
+    }
+    table {
+      width: 100%; /* Ensure the table takes up full width */
+      max-width: 100%; /* Ensure it doesn't overflow the container */
+      margin: 0 auto; /* Center the table */
+    }
+ }
+ 
+
+@media screen and (max-width: 400px) {
+   .container {
+      width: 90%;
+      padding-top: 50px;
+      margin: 0 auto;
+    }
+  
+    .board {
+      width: 90%;
+    }
+ }
