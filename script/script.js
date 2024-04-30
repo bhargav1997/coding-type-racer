@@ -56,7 +56,6 @@ const { code } = data['easy'][randomIndex];
 // Append the formatted code snippet to the paragraph element
 paragraph.innerHTML = code;
 
-
 document.addEventListener('DOMContentLoaded', async function () {
    const userInput = document.getElementById('userInput');
    const paragraph = document.getElementById('paragraph');
@@ -89,19 +88,23 @@ document.addEventListener('DOMContentLoaded', async function () {
       return Math.round(wordsPerMinute);
    }
 
-   async function generateParagraph() {
-      // fetch(filePath)
-      //    .then((response) => response.json())
-      //    .then((data) => {
-            var randomIndex = Math.floor(Math.random() * codeData.length);
-            const { code } = codeData[randomIndex];
-            // Append the formatted code snippet to the paragraph element
-            paragraph.innerHTML = code;
-            timeLimit = TIME_LIMIT;
-
-            timer_text.textContent = TIME_LIMIT;
-         // })
-         // .catch((error) => console.error('Error:', error));
+   function generateParagraph() {
+      let newCode = null;
+      if (codeData === null) {
+         var randomIndex = Math.floor(Math.random() * data['easy'].length);
+         let { code } = data['easy'][randomIndex];
+         newCode = code;
+      } else {
+         var randomIndex = Math.floor(Math.random() * codeData.length);
+         let { code } = codeData[randomIndex];
+         newCode = code;
+      }
+      // Append the formatted code snippet to the paragraph element
+      paragraph.innerHTML = newCode;
+      timeLimit = TIME_LIMIT;
+      total_errors = 0;
+      error_text.textContent = 0;
+      timer_text.textContent = TIME_LIMIT;
    }
 
    // Function to update paragraph color based on user input
@@ -136,7 +139,7 @@ document.addEventListener('DOMContentLoaded', async function () {
    function updateStatisticsTable(attempt, typingSpeed, time) {
       var tbody = document.getElementById('table-body');
       // Create a new row
-      var row = tbody.insertRow();
+      var row = tbody.insertRow(0);
 
       // Insert cells and set their text
       var cell1 = row.insertCell();
@@ -154,7 +157,6 @@ document.addEventListener('DOMContentLoaded', async function () {
       var cell5 = row.insertCell();
       cell5.textContent = difficultySelect.value;
    }
-
 
    function finishGame() {
       // stop the timer
@@ -177,7 +179,7 @@ document.addEventListener('DOMContentLoaded', async function () {
          attemptStatus = 'Not Complete';
          // typingSpeed = '-';
       } else {
-         result.textContent = 'Your typing speed is: ' + typingSpeed + ' characters per minute!';
+         result.textContent = 'Your typing speed is: ' + typingSpeed + ' words per minute!';
          attemptStatus = 'Complete';
       }
 
@@ -189,7 +191,7 @@ document.addEventListener('DOMContentLoaded', async function () {
    // Function to update timer
    function updateTimer() {
       let timeRemaining = timeLimit--;
-      if(timeRemaining >= 0) {
+      if (timeRemaining >= 0) {
          timer_text.textContent = Math.ceil(timeRemaining) + 's';
       }
       if (timeRemaining < 0) {
@@ -223,9 +225,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       total_errors = 0;
       result.textContent = '';
       isTyping = false;
+      clearInterval(timer);
       timer = null;
-
-      await generateParagraph();
+      generateParagraph();
    }
 
    // Add event listener to the refresh button
@@ -234,9 +236,18 @@ document.addEventListener('DOMContentLoaded', async function () {
    // Pasting Disable
    userInput.addEventListener('paste', function (e) {
       e.preventDefault();
-      alert(
-         "Please note that the code cannot be pasted here as it's intended for your practice purposes. \n\nThank you for your understanding!",
-      );
+      result.style.opacity = 1;
+      result.style.textAlign = 'center';
+      result.style.transition = 'opacity 0.3s ease-in-out';
+      result.innerHTML =
+         '<span style="color: red;">Please note that the code cannot be pasted here as it\'s intended for your practice purposes.</span>';
+
+      // Hide the result after 3 seconds
+      setTimeout(function () {
+         result.style.transition = 'opacity 0.3s ease-in-out';
+         // result.style.opacity = 0;
+         result.innerHTML = '';
+      }, 3000);
    });
 
    // After Choosing Difficulty, Level when user clicks on Start button it will update accordingly
@@ -267,5 +278,14 @@ document.addEventListener('DOMContentLoaded', async function () {
             break;
       }
       refreshGame();
+   });
+
+   document.getElementById('helperIcon').addEventListener('click', function () {
+      var helperText = document.getElementById('helperText');
+      if (helperText.style.display === 'none' || helperText.style.display === '') {
+         helperText.style.display = 'block';
+      } else {
+         helperText.style.display = 'none';
+      }
    });
 });

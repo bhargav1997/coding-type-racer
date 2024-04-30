@@ -1,3 +1,4 @@
+/* General Styles */
 body {
    font-family: Arial, sans-serif;
    margin: 0;
@@ -5,36 +6,36 @@ body {
    background-color: #f0f0f0;
 }
 
+/* Container Styles */
 .container {
    position: relative;
-   width: 80%;
-   margin: 0 auto;
-   text-align: center;
-   padding-top: 2em;
+   width: 80%; /* Container width */
+   margin: 0 auto; /* Center align */
+   text-align: center; /* Center align text */
+   padding-top: 2em; /* Top padding */
 }
 
+/* Game Name Styles */
 .game-name {
    letter-spacing: 0.15em;
-   font-family: "Lora", serif;
-   font-optical-sizing: auto;
+   font-family: 'Lora', serif;
    font-weight: 700;
-   font-style: normal;
 }
 
-
+/* Options Styles */
 .options {
-   margin-bottom: 20px;
+   margin-bottom: 20px; /* Bottom margin */
 }
 
+/* Label Styles */
 label {
    font-size: 18px;
    margin-right: 10px;
-   font-family: "Lora", serif;
-   font-optical-sizing: auto;
+   font-family: 'Lora', serif;
    font-weight: 500;
-   font-style: normal;
 }
 
+/* Select Styles */
 select {
    padding: 8px;
    font-size: 16px;
@@ -42,6 +43,7 @@ select {
    margin-right: 5px;
 }
 
+/* Start Button Styles */
 #startButton {
    padding: 10px 20px;
    font-size: 16px;
@@ -57,14 +59,55 @@ select {
    background-color: #0056b3;
 }
 
-
-#language {
-   font-family: "Lora", serif;
-   font-optical-sizing: auto;
-   font-weight: 700;
-   font-style: normal;
+.helper-icon {
+   cursor: pointer;
+   text-align: right;
+   font-size: 24px;
+   color: #007bff;
 }
 
+.helper-text {
+   display: none;
+   margin-bottom: 20px;
+   text-align: right;
+}
+
+.helper-text h2 {
+   font-size: 24px;
+   margin-bottom: 10px;
+   text-align: right;
+}
+
+.helper-text p {
+   font-size: 16px;
+   line-height: 1.6;
+   text-align: right;
+}
+
+.instructions-list {
+   list-style-type: none;
+   counter-reset: item;
+   text-align: right;
+   padding: 0;
+}
+
+.instructions-list li {
+   margin-bottom: 10px;
+}
+
+.instructions-list li::before {
+   content: counter(item) '. '; /* Numbered list item */
+   counter-increment: item;
+   font-weight: bold;
+}
+
+/* Language Styles */
+#language {
+   font-family: 'Lora', serif;
+   font-weight: 700;
+}
+
+/* Typing Area Styles */
 .typing-area {
    border: 2px solid #ccc;
    border-radius: 5px;
@@ -72,37 +115,43 @@ select {
    margin-bottom: 20px;
 }
 
+/* Paragraph Styles */
 #paragraph {
+   font-family: monospace, sans-serif, 'Lora', serif;
    line-height: 1.8em;
    font-size: 20px;
 }
 
+/* User Input Styles */
 #userInput {
    margin-top: 20px;
    padding: 10px;
    font-size: 16px;
    border-radius: 10px;
    min-height: 2em;
-   min-width: 30%;
+   min-width: 60%;
    max-width: 80%;
 }
 
+/* Result Styles */
 #result {
+   opacity: 1;
    margin-top: 20px;
    font-size: 18px;
-
-   font-family: "Lora", serif;
-   font-optical-sizing: auto;
+   font-family: 'Lora', serif;
    font-weight: 600;
-   font-style: normal;
+   justify-content: center;
+   align-items: center;
 }
 
+/* Options List Styles */
 .options-list {
    display: flex;
    align-items: center;
    justify-content: center;
 }
 
+/* Timer, Errors, CPM, WPM Styles */
 .timer,
 .errors,
 .cpm,
@@ -116,73 +165,74 @@ select {
    align-content: space-around;
    justify-content: space-around;
    align-items: stretch;
-
 }
 
-
+/* CPM, WPM Styles */
 .cpm,
 .wpm {
    display: none;
 }
 
+/* Header Text Styles */
 .header_text {
    font-size: 20px;
-   font-family: "Lora", serif;
-   font-optical-sizing: auto;
+   font-family: 'Lora', serif;
    font-weight: 700;
-   font-style: normal;
 }
 
+/* Box Styles */
 .box {
    border: 2px solid #ccc;
    border-radius: 5px;
    padding: 10px;
    margin-bottom: 20px;
-   /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
+/* Board Styles */
 .board {
-    width: 60%;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #fff;
-    border: 2px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+   width: 60%;
+   margin: 50px auto;
+   padding: 20px;
+   background-color: #fff;
+   border: 2px solid #ddd;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Board Heading Styles */
 .board h2 {
-   font-family: "Lora", serif;
-   font-optical-sizing: auto;
+   font-family: 'Lora', serif;
    font-weight: 700;
-   font-style: normal;
    letter-spacing: 0.15em;
 }
 
+/* Heading Styles */
 h2 {
-    text-align: center;
-    margin-bottom: 20px;
+   text-align: center;
+   margin-bottom: 20px;
 }
 
+/* Table Styles */
 table {
-    width: 100%;
-    border-collapse: collapse;
+   width: 100%;
+   border-collapse: collapse;
 }
 
-th, td {
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
-    text-align: center;
+th,
+td {
+   padding: 10px;
+   border-bottom: 1px solid #ddd;
+   text-align: center;
 }
 
+/* Table Header Styles */
 th {
-    background-color: #f2f2f2;
-    font-family: "Lora", serif;
-    font-optical-sizing: auto;
-    font-weight: 500;
-    font-style: normal;
+   background-color: #f2f2f2;
+   font-family: 'Lora', serif;
+   font-weight: 500;
 }
 
+/* Refresh Button Styles */
 #refreshButton {
    padding: 10px 20px;
    font-size: 16px;
@@ -198,77 +248,76 @@ th {
    background-color: #0056b3;
 }
 
-/* Update: Added responsive styles */
+/* Responsive Styles */
 @media screen and (max-width: 768px) {
    .container {
-     width: 90%;
-     padding-top: 50px;
+      width: 90%;
+      padding-top: 50px;
    }
- 
+
    .board {
-     width: 90%;
+      width: 90%;
    }
- }
- 
- @media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 480px) {
    .container {
-     width: 95%;
-     padding-top: 30px;
+      width: 95%;
+      padding-top: 30px;
    }
- 
+
    .board {
-     width: 95%;
+      width: 95%;
    }
- 
+
    .options-list {
-     flex-direction: column;
+      flex-direction: column;
    }
- 
+
    .timer,
    .errors {
-     width: 100%;
-     margin-bottom: 10px;
+      width: 100%;
+      margin-bottom: 10px;
    }
- 
+
    .game-name {
-     font-size: 24px;
+      font-size: 24px;
    }
- 
+
    .options {
-     flex-direction: column;
+      flex-direction: column;
    }
- 
+
    select {
-     width: 100%;
-     margin-bottom: 10px;
+      width: 100%;
+      margin-bottom: 10px;
    }
- 
+
    #startButton,
    #refreshButton {
-     width: 100%;
-     margin-top: 10px;
+      width: 100%;
+      margin-top: 10px;
    }
    #userInput {
-      width: 90%; /* Adjust the width as needed */
-      max-width: 100%; /* Ensure it doesn't overflow the container */
-      margin: 0 auto; /* Center the textarea */
-    }
-    table {
-      width: 100%; /* Ensure the table takes up full width */
-      max-width: 100%; /* Ensure it doesn't overflow the container */
-      margin: 0 auto; /* Center the table */
-    }
- }
- 
+      width: 90%;
+      max-width: 100%;
+      margin: 0 auto;
+   }
+   table {
+      width: 100%;
+      max-width: 100%;
+      margin: 0 auto;
+   }
+}
 
 @media screen and (max-width: 400px) {
    .container {
       width: 90%;
       padding-top: 50px;
       margin: 0 auto;
-    }
-  
-    .board {
+   }
+
+   .board {
       width: 90%;
-    }
- }
+   }
+}
