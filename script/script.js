@@ -7,28 +7,28 @@ let codeData = null;
 let data = {
    easy: [
       { code: "console.log('Hello, world!');" },
-      { code: 'let num1 = 5; let num2 = 10; let sum = num1 + num2; console.log(sum);' },
+      { code: "let num1 = 5; let num2 = 10; let sum = num1 + num2; console.log(sum);" },
       { code: "let greeting = 'Welcome'; let name = 'John'; console.log(greeting + ', ' + name + '!');" },
-      { code: 'let x = 5; let y = 10; let z = x + y; console.log(z);' },
+      { code: "let x = 5; let y = 10; let z = x + y; console.log(z);" },
       { code: "let str = 'Hello'; let name = 'World'; console.log(str + ', ' + name + '!');" },
-      { code: 'let arr = [1, 2, 3, 4, 5]; console.log(arr.length);' },
+      { code: "let arr = [1, 2, 3, 4, 5]; console.log(arr.length);" },
    ],
    medium: [
       {
-         code: 'function binarySearch(arr, target) { let left = 0; let right = arr.length - 1; while (left <= right) { let mid = Math.floor((left + right) / 2); if (arr[mid] === target) { return mid; } else if (arr[mid] < target) { left = mid + 1; } else { right = mid - 1; } } return -1; }',
+         code: "function binarySearch(arr, target) { let left = 0; let right = arr.length - 1; while (left <= right) { let mid = Math.floor((left + right) / 2); if (arr[mid] === target) { return mid; } else if (arr[mid] < target) { left = mid + 1; } else { right = mid - 1; } } return -1; }",
       },
-      { code: 'function fibonacci(n) { if (n <= 1) return n; return fibonacci(n - 1) + fibonacci(n - 2); } console.log(fibonacci(5));' },
-      { code: 'let array = [1, 2, 3, 4, 5]; let sum = array.reduce((acc, curr) => acc + curr, 0); console.log(sum);' },
+      { code: "function fibonacci(n) { if (n <= 1) return n; return fibonacci(n - 1) + fibonacci(n - 2); } console.log(fibonacci(5));" },
+      { code: "let array = [1, 2, 3, 4, 5]; let sum = array.reduce((acc, curr) => acc + curr, 0); console.log(sum);" },
       {
          code: "class Person { constructor(name, age) { this.name = name; this.age = age; } getInfo() { return this.name + ' is ' + this.age + ' years old.'; } } let person = new Person('Alice', 30); console.log(person.getInfo());",
       },
-      { code: 'function factorial(n) { if (n === 0 || n === 1) return 1; return n * factorial(n - 1); } console.log(factorial(5));' },
+      { code: "function factorial(n) { if (n === 0 || n === 1) return 1; return n * factorial(n - 1); } console.log(factorial(5));" },
       { code: "let obj = { a: 1, b: 2, c: 3 }; for (let key in obj) { console.log(key + ': ' + obj[key]); }" },
-      { code: 'let numbers = [1, 2, 3, 4, 5]; let squares = numbers.map(num => num * num); console.log(squares);' },
+      { code: "let numbers = [1, 2, 3, 4, 5]; let squares = numbers.map(num => num * num); console.log(squares);" },
    ],
    hard: [
       {
-         code: 'function mergeSort(arr) { if (arr.length <= 1) return arr; const middle = Math.floor(arr.length / 2); const left = arr.slice(0, middle); const right = arr.slice(middle); return merge(mergeSort(left), mergeSort(right)); } function merge(left, right) { let result = []; let leftIndex = 0; let rightIndex = 0; while (leftIndex < left.length && rightIndex < right.length) { if (left[leftIndex] < right[rightIndex]) { result.push(left[leftIndex]); leftIndex++; } else { result.push(right[rightIndex]); rightIndex++; } } return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex)); } console.log(mergeSort([5, 3, 8, 4, 2, 1]));',
+         code: "function mergeSort(arr) { if (arr.length <= 1) return arr; const middle = Math.floor(arr.length / 2); const left = arr.slice(0, middle); const right = arr.slice(middle); return merge(mergeSort(left), mergeSort(right)); } function merge(left, right) { let result = []; let leftIndex = 0; let rightIndex = 0; while (leftIndex < left.length && rightIndex < right.length) { if (left[leftIndex] < right[rightIndex]) { result.push(left[leftIndex]); leftIndex++; } else { result.push(right[rightIndex]); rightIndex++; } } return result.concat(left.slice(leftIndex)).concat(right.slice(rightIndex)); } console.log(mergeSort([5, 3, 8, 4, 2, 1]));",
       },
       {
          code: "function deepClone(obj) { if (obj === null || typeof obj !== 'object') return obj; let clone = Array.isArray(obj) ? [] : {}; for (let key in obj) { if (obj.hasOwnProperty(key)) { clone[key] = typeof obj[key] === 'object' ? deepClone(obj[key]) : obj[key]; } } return clone; } let obj = { a: 1, b: { c: 2 } }; let clonedObj = deepClone(obj); console.log(clonedObj);",
@@ -37,10 +37,10 @@ let data = {
          code: "async function fetchData() { try { const response = await fetch('https://api.example.com/data'); const data = await response.json(); console.log(data); } catch (error) { console.error('Error fetching data:', error); } } fetchData();",
       },
       {
-         code: 'function binarySearch(arr, target) { let low = 0; let high = arr.length - 1; while (low <= high) { let mid = Math.floor((low + high) / 2); if (arr[mid] === target) return mid; else if (arr[mid] < target) low = mid + 1; else high = mid - 1; } return -1; } console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 5));',
+         code: "function binarySearch(arr, target) { let low = 0; let high = arr.length - 1; while (low <= high) { let mid = Math.floor((low + high) / 2); if (arr[mid] === target) return mid; else if (arr[mid] < target) low = mid + 1; else high = mid - 1; } return -1; } console.log(binarySearch([1, 2, 3, 4, 5, 6, 7, 8, 9], 5));",
       },
       {
-         code: 'class LinkedList { constructor() { this.head = null; } insert(value) { this.head = { value, next: this.head }; } print() { let current = this.head; while (current) { console.log(current.value); current = current.next; } } } let list = new LinkedList(); list.insert(1); list.insert(2); list.insert(3); list.print();',
+         code: "class LinkedList { constructor() { this.head = null; } insert(value) { this.head = { value, next: this.head }; } print() { let current = this.head; while (current) { console.log(current.value); current = current.next; } } } let list = new LinkedList(); list.insert(1); list.insert(2); list.insert(3); list.print();",
       },
       {
          code: "async function fetchData() { try { const response = await fetch('https://api.example.com/data'); const data = await response.json(); console.log(data); } catch (error) { console.error('Error fetching data:', error); } } fetchData();",
@@ -48,23 +48,23 @@ let data = {
    ],
 };
 
-var randomIndex = Math.floor(Math.random() * data['easy'].length);
-const paragraph = document.getElementById('paragraph');
+var randomIndex = Math.floor(Math.random() * data["easy"].length);
+const paragraph = document.getElementById("paragraph");
 
-const { code } = data['easy'][randomIndex];
+const { code } = data["easy"][randomIndex];
 
 // Append the formatted code snippet to the paragraph element
 paragraph.innerHTML = code;
 
-document.addEventListener('DOMContentLoaded', async function () {
-   const userInput = document.getElementById('userInput');
-   const paragraph = document.getElementById('paragraph');
-   const result = document.getElementById('result');
-   const difficultySelect = document.getElementById('difficulty');
-   const startButton = document.getElementById('startButton');
+document.addEventListener("DOMContentLoaded", async function () {
+   const userInput = document.getElementById("userInput");
+   const paragraph = document.getElementById("paragraph");
+   const result = document.getElementById("result");
+   const difficultySelect = document.getElementById("difficulty");
+   const startButton = document.getElementById("startButton");
 
-   let timer_text = document.querySelector('.curr_time');
-   let error_text = document.querySelector('.curr_errors');
+   let timer_text = document.querySelector(".curr_time");
+   let error_text = document.querySelector(".curr_errors");
 
    let startTime;
    let endTime;
@@ -74,6 +74,16 @@ document.addEventListener('DOMContentLoaded', async function () {
    let total_errors = 0;
    let timer = null;
    let isTyping = false;
+
+   const storedFontSize = localStorage.getItem("fontSize");
+   const storedFontFamily = localStorage.getItem("fontFamily");
+
+   if (storedFontSize) {
+      document.body.style.fontSize = storedFontSize;
+   }
+   if (storedFontFamily) {
+      document.body.style.fontFamily = storedFontFamily;
+   }
 
    function calculateTypingSpeed(startTime, endTime, totalWords) {
       // Calculate time difference in milliseconds
@@ -91,8 +101,8 @@ document.addEventListener('DOMContentLoaded', async function () {
    function generateParagraph() {
       let newCode = null;
       if (codeData === null) {
-         var randomIndex = Math.floor(Math.random() * data['easy'].length);
-         let { code } = data['easy'][randomIndex];
+         var randomIndex = Math.floor(Math.random() * data["easy"].length);
+         let { code } = data["easy"][randomIndex];
          newCode = code;
       } else {
          var randomIndex = Math.floor(Math.random() * codeData.length);
@@ -111,14 +121,14 @@ document.addEventListener('DOMContentLoaded', async function () {
    function updateParagraph() {
       const inputText = userInput.value;
       let paragraphText = paragraph.textContent;
-      let updatedHtml = '';
+      let updatedHtml = "";
 
       for (let i = 0; i < paragraphText.length; i++) {
          if (i < inputText.length) {
             if (inputText[i] === paragraphText[i]) {
-               updatedHtml += '<span style="color: green;">' + paragraphText[i] + '</span>';
+               updatedHtml += '<span style="color: green;">' + paragraphText[i] + "</span>";
             } else {
-               updatedHtml += '<span style="color: red;" class="error-text">' + paragraphText[i] + '</span>';
+               updatedHtml += '<span style="color: red;" class="error-text">' + paragraphText[i] + "</span>";
                total_errors++; // Increment error count
             }
          } else {
@@ -137,7 +147,7 @@ document.addEventListener('DOMContentLoaded', async function () {
    }
 
    function updateStatisticsTable(attempt, typingSpeed, time) {
-      var tbody = document.getElementById('table-body');
+      var tbody = document.getElementById("table-body");
       // Create a new row
       var row = tbody.insertRow(0);
 
@@ -161,7 +171,7 @@ document.addEventListener('DOMContentLoaded', async function () {
    function finishGame() {
       // stop the timer
       clearInterval(timer);
-      let attemptStatus = '';
+      let attemptStatus = "";
 
       endTime = new Date().getTime();
       const elapsedTime = (endTime - startTime) / 1000; // in seconds
@@ -169,18 +179,18 @@ document.addEventListener('DOMContentLoaded', async function () {
       let typingSpeed = calculateTypingSpeed(startTime, endTime, userInput.value.length);
 
       // Check if any of the child elements have the class "error-text"
-      var errorTextElements = paragraph.getElementsByClassName('error-text');
+      var errorTextElements = paragraph.getElementsByClassName("error-text");
 
       if (
          (userInput.value !== paragraph.textContent && userInput.value.length !== paragraph.textContent.length) ||
          errorTextElements.length > 0
       ) {
          result.innerHTML = '<span style="color: red;">Sorry, you exceeded the time limit. Please try again!</span>';
-         attemptStatus = 'Not Complete';
+         attemptStatus = "Not Complete";
          // typingSpeed = '-';
       } else {
-         result.textContent = 'Your typing speed is: ' + typingSpeed + ' words per minute!';
-         attemptStatus = 'Complete';
+         result.textContent = "Your typing speed is: " + typingSpeed + " words per minute!";
+         attemptStatus = "Complete";
       }
 
       updateStatisticsTable(attemptStatus, typingSpeed, elapsedTime);
@@ -192,7 +202,7 @@ document.addEventListener('DOMContentLoaded', async function () {
    function updateTimer() {
       let timeRemaining = timeLimit--;
       if (timeRemaining >= 0) {
-         timer_text.textContent = Math.ceil(timeRemaining) + 's';
+         timer_text.textContent = Math.ceil(timeRemaining) + "s";
       }
       if (timeRemaining < 0) {
          finishGame();
@@ -200,7 +210,7 @@ document.addEventListener('DOMContentLoaded', async function () {
    }
 
    // Event listener for keyboard input
-   userInput.addEventListener('input', function () {
+   userInput.addEventListener("input", function () {
       if (!isTyping) {
          isTyping = true; // Set flag to true when the user starts typing
          startTime = new Date().getTime();
@@ -217,75 +227,137 @@ document.addEventListener('DOMContentLoaded', async function () {
 
    // Function to be called when the refresh button is clicked
    async function refreshGame() {
-      console.log('Game refreshed!');
+      console.log("Game refreshed!");
 
-      userInput.value = '';
+      userInput.value = "";
       userInput.disabled = false;
       error_text.textContent = 0;
       total_errors = 0;
-      result.textContent = '';
+      result.textContent = "";
       isTyping = false;
       clearInterval(timer);
       timer = null;
       generateParagraph();
    }
 
+   document.getElementById("settingsIcon").addEventListener("click", function () {
+      document.getElementById("settingsModal").style.display = "block";
+   });
+
+   document.getElementById("applySettings").addEventListener("click", function () {
+      const fontSize = document.getElementById("fontSize").value + "px";
+      const fontFamily = document.getElementById("fontFamily").value;
+
+      paragraph.style.fontSize = fontSize;
+      paragraph.style.fontFamily = fontFamily;
+
+      document.getElementById("settingsModal").style.display = "none";
+   });
+
+   // Optional: Close modal if user clicks outside of it
+   window.onclick = function (event) {
+      if (event.target == document.getElementById("settingsModal")) {
+         document.getElementById("settingsModal").style.display = "none";
+      }
+   };
+
    // Add event listener to the refresh button
-   document.getElementById('refreshButton').addEventListener('click', refreshGame);
+   document.getElementById("refreshButton").addEventListener("click", refreshGame);
+
+   document.getElementById("closeIcon").addEventListener("click", function () {
+      document.getElementById("settingsModal").style.display = "none";
+   });
+
+   // Optional: Close modal if user clicks outside of it
+   window.onclick = function (event) {
+      if (event.target == document.getElementById("settingsModal")) {
+         document.getElementById("settingsModal").style.display = "none";
+      }
+   };
 
    // Pasting Disable
-   userInput.addEventListener('paste', function (e) {
+   userInput.addEventListener("paste", function (e) {
       e.preventDefault();
       result.style.opacity = 1;
-      result.style.textAlign = 'center';
-      result.style.transition = 'opacity 0.3s ease-in-out';
+      result.style.textAlign = "center";
+      result.style.transition = "opacity 0.3s ease-in-out";
       result.innerHTML =
          '<span style="color: red;">Please note that the code cannot be pasted here as it\'s intended for your practice purposes.</span>';
 
       // Hide the result after 3 seconds
       setTimeout(function () {
-         result.style.transition = 'opacity 0.3s ease-in-out';
+         result.style.transition = "opacity 0.3s ease-in-out";
          // result.style.opacity = 0;
-         result.innerHTML = '';
+         result.innerHTML = "";
       }, 3000);
    });
 
    // After Choosing Difficulty, Level when user clicks on Start button it will update accordingly
-   startButton.addEventListener('click', function () {
+   startButton.addEventListener("click", function () {
       const difficulty = difficultySelect.value;
-      const current_time = document.getElementById('current_time');
+      const current_time = document.getElementById("current_time");
 
       switch (difficulty) {
-         case 'easy':
-            codeData = data['easy'];
-            current_time.innerHTML = '60s';
+         case "easy":
+            codeData = data["easy"];
+            current_time.innerHTML = "60s";
             TIME_LIMIT = 60;
             break;
-         case 'medium':
-            codeData = data['medium'];
-            current_time.innerHTML = '80s';
+         case "medium":
+            codeData = data["medium"];
+            current_time.innerHTML = "80s";
             TIME_LIMIT = 80;
             break;
-         case 'hard':
-            codeData = data['hard'];
-            current_time.innerHTML = '120s';
+         case "hard":
+            codeData = data["hard"];
+            current_time.innerHTML = "120s";
             TIME_LIMIT = 120;
             break;
          default:
-            codeData = data['easy']; // Default to easy difficulty
-            current_time.innerHTML = '60s';
+            codeData = data["easy"]; // Default to easy difficulty
+            current_time.innerHTML = "60s";
             TIME_LIMIT = 60;
             break;
       }
       refreshGame();
    });
 
-   document.getElementById('helperIcon').addEventListener('click', function () {
-      var helperText = document.getElementById('helperText');
-      if (helperText.style.display === 'none' || helperText.style.display === '') {
-         helperText.style.display = 'block';
+   document.getElementById("helperIcon").addEventListener("click", function () {
+      var helperText = document.getElementById("helperText");
+      if (helperText.style.display === "none" || helperText.style.display === "") {
+         helperText.style.display = "block";
       } else {
-         helperText.style.display = 'none';
+         helperText.style.display = "none";
       }
+   });
+
+   document.getElementById("applySettings").addEventListener("click", function () {
+      const fontSize = document.getElementById("fontSize").value + "px";
+      const fontFamily = document.getElementById("fontFamily").value;
+
+      paragraph.style.fontSize = fontSize;
+      paragraph.style.fontFamily = fontFamily;
+
+      localStorage.setItem("fontSize", fontSize);
+      localStorage.setItem("fontFamily", fontFamily);
+
+      document.getElementById("settingsModal").style.display = "none";
+   });
+
+   document.getElementById("resetSettings").addEventListener("click", function () {
+      // Reset font size and family to defaults
+      const defaultFontSize = "20px";
+      const defaultFontFamily = "monospace, sans-serif, 'Lora', serif";
+
+      paragraph.style.fontSize = defaultFontSize;
+      paragraph.style.fontFamily = defaultFontFamily;
+
+      // Reset inputs to default values
+      document.getElementById("fontSize").value = defaultFontSize;
+      document.getElementById("fontFamily").value = defaultFontFamily;
+
+      // Clear localStorage
+      localStorage.removeItem("fontSize");
+      localStorage.removeItem("fontFamily");
    });
 });

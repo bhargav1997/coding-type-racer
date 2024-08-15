@@ -26,6 +26,30 @@
             </select>
             <button id="startButton">Start</button>
 
+            <div class="settings-icon" id="settingsIcon" index="0">
+                <i class="fas fa-cog"></i>
+            </div>
+
+            <div class="settings-modal" id="settingsModal" style="display: none;">
+                <span class="close-icon" id="closeIcon">&times;</span>
+                <h2>Settings</h2>
+                <label for="fontSize">Font Size:</label>
+                <input type="range" id="fontSize" min="10" max="30" value="16">
+
+                <label for="fontFamily">Font Family:</label>
+                <select id="fontFamily">
+                    <option value="'Lora', serif">Lora</option>
+                    <option value="'Arial', sans-serif">Arial</option>
+                    <option value="'Courier New', monospace">Courier New</option>
+                    <option value="monospace, sans-serif, 'Lora', serif">Monospace</option>
+                    <option value="'Times New Roman', serif">Times New Roman</option>
+                    <option value="serif, sans-serif, 'Lora', serif">Serif</option>
+                    <option value="sans-serif, 'Lora', serif">Sans-Serif</option>
+                </select>
+                <button id="resetSettings">Reset</button>
+                <button id="applySettings">Apply</button>
+            </div>
+
             <div class="helper-icon" id="helperIcon">
                 <i class="fas fa-question-circle"></i>
             </div>

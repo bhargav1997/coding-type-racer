@@ -18,7 +18,7 @@ body {
 /* Game Name Styles */
 .game-name {
    letter-spacing: 0.15em;
-   font-family: 'Lora', serif;
+   font-family: "Lora", serif;
    font-weight: 700;
 }
 
@@ -31,7 +31,7 @@ body {
 label {
    font-size: 18px;
    margin-right: 10px;
-   font-family: 'Lora', serif;
+   font-family: "Lora", serif;
    font-weight: 500;
 }
 
@@ -96,14 +96,14 @@ select {
 }
 
 .instructions-list li::before {
-   content: counter(item) '. '; /* Numbered list item */
+   content: counter(item) ". "; /* Numbered list item */
    counter-increment: item;
    font-weight: bold;
 }
 
 /* Language Styles */
 #language {
-   font-family: 'Lora', serif;
+   font-family: "Lora", serif;
    font-weight: 700;
 }
 
@@ -117,7 +117,7 @@ select {
 
 /* Paragraph Styles */
 #paragraph {
-   font-family: monospace, sans-serif, 'Lora', serif;
+   font-family: monospace, sans-serif, "Lora", serif;
    line-height: 1.8em;
    font-size: 20px;
 }
@@ -138,7 +138,7 @@ select {
    opacity: 1;
    margin-top: 20px;
    font-size: 18px;
-   font-family: 'Lora', serif;
+   font-family: "Lora", serif;
    font-weight: 600;
    justify-content: center;
    align-items: center;
@@ -176,7 +176,7 @@ select {
 /* Header Text Styles */
 .header_text {
    font-size: 20px;
-   font-family: 'Lora', serif;
+   font-family: "Lora", serif;
    font-weight: 700;
 }
 
@@ -201,7 +201,7 @@ select {
 
 /* Board Heading Styles */
 .board h2 {
-   font-family: 'Lora', serif;
+   font-family: "Lora", serif;
    font-weight: 700;
    letter-spacing: 0.15em;
 }
@@ -228,7 +228,7 @@ td {
 /* Table Header Styles */
 th {
    background-color: #f2f2f2;
-   font-family: 'Lora', serif;
+   font-family: "Lora", serif;
    font-weight: 500;
 }
 
@@ -246,6 +246,98 @@ th {
 
 #refreshButton:hover {
    background-color: #0056b3;
+}
+
+.close-icon {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   font-size: 24px;
+   cursor: pointer;
+   color: #333;
+   transition: color 0.3s ease;
+}
+
+.close-icon:hover {
+   color: #f44336; /* Changes to red on hover */
+}
+
+.settings-icon {
+   position: fixed;
+   top: 20px;
+   right: 20px;
+   cursor: pointer;
+   font-size: 24px;
+   color: #007bff;
+}
+/* Style for the settings modal */
+.settings-modal {
+   position: fixed;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+   z-index: 1000;
+   width: 300px;
+   text-align: center;
+}
+
+/* General button styles */
+#resetSettings,
+#applySettings {
+   margin-top: 20px;
+   margin-right: 10px;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+   font-size: 16px;
+   transition: background-color 0.3s ease;
+}
+
+/* Apply button styles */
+#applySettings {
+   background-color: #4caf50; /* Green */
+   color: white;
+}
+
+#applySettings:hover {
+   background-color: #45a049; /* Darker green */
+}
+
+/* Reset button styles */
+#resetSettings {
+   background-color: #f44336; /* Red */
+   color: white;
+}
+
+#resetSettings:hover {
+   background-color: #d32f2f; /* Darker red */
+}
+
+/* Additional modal styles */
+.settings-modal h2 {
+   margin-bottom: 20px;
+   font-size: 24px;
+}
+
+.settings-modal label {
+   display: block;
+   margin-top: 10px;
+   font-size: 16px;
+}
+
+#fontSize,
+#fontFamily {
+   width: 100%;
+   margin-top: 5px;
+   font-size: 14px;
+   border-radius: 4px;
+   border: 1px solid #ccc;
+   margin-bottom: 20px;
 }
 
 /* Responsive Styles */
